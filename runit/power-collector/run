@@ -1,0 +1,11 @@
+#!/bin/sh
+# runit service script for the power collector (Void Linux).
+# Install by symlinking this directory into /etc/sv/:
+#   ln -s /path/to/this/repo/runit/power-collector /etc/sv/power-collector
+#   ln -s /etc/sv/power-collector /var/service/   # enable
+#
+# Point REPO at your checkout and ensure a virtualenv exists at $REPO/venv.
+REPO=/path/to/power-telemetry
+exec 2>&1
+cd "$REPO" || exit 1
+exec "$REPO/venv/bin/python" -u -m collector.run

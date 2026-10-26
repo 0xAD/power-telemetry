@@ -1,0 +1,4 @@
+#!/bin/sh
+# Log why the service exited. runit calls this with exit status as $1.
+echo "power-collector exited with status $1" >&2
+exit 0

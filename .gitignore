@@ -1,0 +1,16 @@
+# Secrets — never commit the local key
+.env
+config.yaml
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Database
+data/*.db
+data/*.db-*
+
+# OS
+.DS_Store
